@@ -1,0 +1,7 @@
+name: AdvancedShield
+version: '${project.version}'
+main: de.tomstahlberg.advancedshield.AdvancedShield
+api-version: 1.19
+commands:
+  shield:
+    description: "main command"
