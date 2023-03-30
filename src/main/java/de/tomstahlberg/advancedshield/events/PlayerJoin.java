@@ -16,7 +16,7 @@ public class PlayerJoin implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event){
         Player player = event.getPlayer();
-        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(ChatColor.translateAlternateColorCodes('&',"&8\uD83D\uDEE1 &7lädt ... &8\uD83D\uDEE1")));
+        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(ChatColor.translateAlternateColorCodes('&',"                        &8\uD83D\uDEE1 &7lädt ... &8\uD83D\uDEE1")));
         if(!(AdvancedShield.playerdata.contains(player.getUniqueId().toString()))){
             AdvancedShield.playerdata.set(player.getUniqueId().toString(), 0);
         }

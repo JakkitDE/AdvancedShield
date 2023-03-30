@@ -16,7 +16,7 @@ public class Timer {
             public void run() {
                 for(Player player : Bukkit.getOnlinePlayers()){
                     int shield = AdvancedShield.playerdata.getInt(player.getUniqueId().toString());
-                    player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(ChatColor.translateAlternateColorCodes('&',"&8\uD83D\uDEE1 &7"+shield+" &8\uD83D\uDEE1")));
+                    player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(ChatColor.translateAlternateColorCodes('&',"                        &8\uD83D\uDEE1 &7"+shield+" &8\uD83D\uDEE1")));
                 }
             }
         }, 40, 40);
