@@ -1,6 +1,8 @@
 package de.tomstahlberg.advancedshield.timer;
 
 import de.tomstahlberg.advancedshield.AdvancedShield;
+import de.tomstahlberg.advancedshield.functions.PlaceHolderSet;
+import me.clip.placeholderapi.PlaceholderAPI;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
@@ -15,8 +17,12 @@ public class Timer {
             @Override
             public void run() {
                 for(Player player : Bukkit.getOnlinePlayers()){
-                    int shield = AdvancedShield.playerdata.getInt(player.getUniqueId().toString());
-                    player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(ChatColor.translateAlternateColorCodes('&',"                        &8\uD83D\uDEE1 &7"+shield+" &8\uD83D\uDEE1")));
+
+                    PlaceHolderSet placeHolderSet = new PlaceHolderSet(AdvancedShield.plugin);
+                    placeHolderSet.onRequest(player, "player_shield");
+
+                    String timerText = PlaceholderAPI.setPlaceholders(player, "%player_shield% %advancedshield_player_shield% ist dein Shield.");
+                    player.sendMessage(timerText);
                 }
             }
         }, 40, 40);

@@ -5,7 +5,9 @@ import de.tomstahlberg.advancedshield.configurator.Configurator;
 import de.tomstahlberg.advancedshield.events.DamageEvent;
 import de.tomstahlberg.advancedshield.events.InteractEvent;
 import de.tomstahlberg.advancedshield.events.PlayerJoin;
+import de.tomstahlberg.advancedshield.functions.PlaceHolderSet;
 import de.tomstahlberg.advancedshield.timer.Timer;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
@@ -21,6 +23,9 @@ public final class AdvancedShield extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         plugin = this;
+        if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            new PlaceHolderSet(this).register();
+        }
         getServer().getPluginManager().registerEvents(new DamageEvent(), this);
         getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
         getServer().getPluginManager().registerEvents(new InteractEvent(), this);
