@@ -30,7 +30,7 @@ public final class AdvancedShield extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new InteractEvent(), this);
 
         getServer().getPluginCommand("shield").setExecutor(new GiveItem());
-        Timer.startTimer();
+        //Timer.startTimer();
         Timer.startBackupTimer();
         try {
             configurator = new Configurator();

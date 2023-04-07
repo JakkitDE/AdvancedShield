@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 import java.io.IOException;
 
 public class Timer {
-    public static void startTimer(){
+    /*public static void startTimer(){
         Bukkit.getScheduler().runTaskTimer(AdvancedShield.plugin, new Runnable() {
             @Override
             public void run() {
@@ -20,7 +20,7 @@ public class Timer {
                 }
             }
         }, 40, 40);
-    }
+    }*/
 
     public static void startBackupTimer(){
         Bukkit.getScheduler().runTaskTimer(AdvancedShield.plugin, new Runnable() {
