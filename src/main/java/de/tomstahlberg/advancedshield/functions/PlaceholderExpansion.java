@@ -1,16 +1,14 @@
 package de.tomstahlberg.advancedshield.functions;
 
 import de.tomstahlberg.advancedshield.AdvancedShield;
-import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
-public class PlaceHolderSet extends PlaceholderExpansion {
+public class PlaceholderExpansion extends me.clip.placeholderapi.expansion.PlaceholderExpansion {
     private Plugin plugin;
     @Override
     public String getIdentifier() {
-        return "player_shield";
+        return "advancedshield";
     }
 
     @Override
@@ -22,8 +20,16 @@ public class PlaceHolderSet extends PlaceholderExpansion {
     public String getVersion() {
         return "1.0";
     }
+    @Override
+    public boolean canRegister(){
+        return true;
+    }
+    @Override
+    public boolean persist(){
+        return true;
+    }
 
-    public PlaceHolderSet(Plugin plugin){
+    public PlaceholderExpansion(Plugin plugin){
         this.plugin = plugin;
     }
 
